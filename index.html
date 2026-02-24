@@ -1582,7 +1582,7 @@ function addQuickBrand(b){if(!watchedBrands.includes(b)){watchedBrands.push(b);s
 function renderWatchedBrandsBar(){
   const el=document.getElementById('watchedBrandsBar');
   if(!el)return;
-  if(!watchedBrands.length){el.innerHTML='<div style="font-size:12px;color:#9ba3b0;padding:6px 0">暂无关注品牌 — <span style="color:#2563eb;cursor:pointer" onclick="navTo('bid-settings')">去设置</span></div>';return;}
+  if(!watchedBrands.length){el.innerHTML=`<div style="font-size:12px;color:#9ba3b0;padding:6px 0">暂无关注品牌 — <span style="color:#2563eb;cursor:pointer" onclick="navTo('bid-settings')">去设置</span></div>`;return;}
   el.innerHTML=watchedBrands.map(b=>{
     const cnt=bids.filter(bd=>bd.brand===b).length;
     const newCnt=bids.filter(bd=>bd.brand===b&&!bd.is_read).length;
